@@ -16,5 +16,9 @@ public class ProductService {
     public List<Product> getProducts(){
         return dummmyProducts;
     }
-
+    public Product getProductById(int prodId){
+        return dummmyProducts.stream()
+                .filter(p->p.getProdId()==prodId)
+                .findFirst().get();
+    }
 }
