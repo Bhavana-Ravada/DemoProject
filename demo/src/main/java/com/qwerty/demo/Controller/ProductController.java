@@ -25,10 +25,15 @@ public class ProductController {
     void addProducts(@RequestBody Product prod){
         prodservice.addProduct(prod);
     }
+
     @PutMapping("/products")
     void updateProduct(@RequestBody Product prod){
         prodservice.updateProduct(prod);
     }
 
+    @DeleteMapping("Products/{prodId}")
+    void deleteProduct(@PathVariable int prodId){
+        prodservice.deleteProduct(prodId);
 
+    }
 }
