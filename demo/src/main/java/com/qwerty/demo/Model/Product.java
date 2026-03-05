@@ -13,11 +13,8 @@ import lombok.NoArgsConstructor;
 @Table(name="products")
 public class Product {
     @Id
+    @Column()
     private int prodId;
     private String prodName;
     private double price;
-
-
-
-
 }

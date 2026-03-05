@@ -15,12 +15,13 @@ public class ProductService {
     public List<Product> getProducts(){
         return repo.findAll();
     }
+
     public Product getProductById(int prodId){
-        return repo.findById(prodId).orElseThrow(()-> new RuntimeException("product not found"));
+        return repo.findById(prodId)
+                .orElseThrow(()-> new RuntimeException("product not found"));
     }
 
     public void addProduct(Product prod) {
-
         repo.save(prod);
     }
 
@@ -31,5 +32,10 @@ public class ProductService {
 
     public void deleteProduct(int prodId) {
        repo.deleteById(prodId);
+    }
+
+
+    public List<Product> getProductsByPriceLessThan(double price) {
+        return repo.findProductsByPriceLessThan(price);
     }
 }

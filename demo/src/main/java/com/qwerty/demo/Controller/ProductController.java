@@ -34,6 +34,10 @@ public class ProductController {
     @DeleteMapping("Products/{prodId}")
     void deleteProduct(@PathVariable int prodId){
         prodservice.deleteProduct(prodId);
-
     }
+    @GetMapping("products/lessThan/{price}")
+    List<Product> getProductsByPriceLessThan(@PathVariable double price){
+        return prodservice.getProductsByPriceLessThan(price);
+    }
+
 }
